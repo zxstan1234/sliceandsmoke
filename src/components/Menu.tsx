@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import { Pizza, Beef, Flame, Sandwich, Salad, Coffee } from 'lucide-react';
+import FoodIllustration from './FoodIllustration';
 
 const categories = [
   { id: 'pizza', name: 'Pizza', icon: Pizza },
@@ -184,11 +185,18 @@ export default function Menu() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="menu-card flex items-center justify-between p-4 rounded-xl bg-brand-card/50 border border-brand-border/50 hover:border-brand-orange/30"
+                className="menu-card group flex items-center justify-between p-4 rounded-xl bg-brand-card/50 border border-brand-border/50 hover:border-brand-orange/30"
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3 flex-1 min-w-0">
+                  <div className="w-14 h-14 rounded-xl bg-brand-orange/5 border border-brand-orange/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange/10 group-hover:border-brand-orange/20 transition-all duration-300 group-hover:scale-110">
+                    <FoodIllustration 
+                      category={activeCategory} 
+                      name={item.name}
+                      className="w-11 h-11"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-white font-medium text-sm">{item.name}</span>
                       {item.badge && (
                         <span className="text-[10px] bg-brand-orange/20 text-brand-orange px-2 py-0.5 rounded-full font-medium">
@@ -198,7 +206,7 @@ export default function Menu() {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 ml-2">
                   {item.prices.map((price, i) => (
                     <div key={i} className="text-right">
                       {showSizes && (
