@@ -24,15 +24,6 @@ export default function Deals() {
       <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-darker to-brand-dark" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Floating emojis */}
-        <div className="float-emoji" style={{ top: '8%', left: '4%', animationDelay: '0s', fontSize: '1.5rem' }}>💰</div>
-        <div className="float-emoji" style={{ top: '12%', right: '6%', animationDelay: '2s', fontSize: '1.5rem' }}>🎉</div>
-        <div className="float-emoji" style={{ bottom: '15%', left: '6%', animationDelay: '4s', fontSize: '1.2rem' }}>⚡</div>
-        <div className="float-emoji" style={{ bottom: '20%', right: '4%', animationDelay: '6s', fontSize: '1.2rem' }}>🔥</div>
-        
-        {/* Light sweep effect */}
-        <div className="light-sweep" style={{ animationDelay: '5s' }} />
-        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,9 +46,9 @@ export default function Deals() {
           {deals.map((deal, index) => (
             <motion.div
               key={deal.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.08 }}
+              transition={{ duration: 0.35, delay: Math.min(index * 0.06, 0.5) }}
               className="menu-card group relative p-5 rounded-2xl bg-brand-card/60 border border-brand-border/50 hover:border-brand-orange/40 overflow-hidden hover:scale-[1.02] transition-transform duration-300"
             >
               {/* Glow effect */}

@@ -112,8 +112,8 @@ export default function AnimatedBackground() {
       }
     }
 
-    // Initialize particles
-    for (let i = 0; i < 60; i++) {
+    // Initialize particles (reduced for performance)
+    for (let i = 0; i < 30; i++) {
       particles.push(new Particle());
     }
 
@@ -126,27 +126,10 @@ export default function AnimatedBackground() {
         p.draw();
       });
 
-      // Draw connections between nearby particles
-      particles.forEach((a, i) => {
-        particles.slice(i + 1).forEach(b => {
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = '#F97316';
-            ctx.globalAlpha = (1 - dist / 120) * 0.05;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-            ctx.globalAlpha = 1;
-          }
-        });
-      });
+      // Connection lines removed for performance
 
-      // Add embers occasionally
-      if (Math.random() > 0.95) {
+      // Add embers occasionally (reduced frequency)
+      if (Math.random() > 0.98) {
         embers.push(new Ember());
       }
 
@@ -172,7 +155,7 @@ export default function AnimatedBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.4, willChange: 'transform' }}
     />
   );
 }

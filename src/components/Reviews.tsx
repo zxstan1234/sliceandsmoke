@@ -77,9 +77,9 @@ export default function Reviews() {
           {reviews.map((review, index) => (
             <motion.div
               key={review.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: Math.min(index * 0.08, 0.4) }}
               className="menu-card group p-6 rounded-2xl bg-brand-card/40 border border-brand-border/50 hover:border-brand-orange/30 relative overflow-hidden"
             >
               {/* Quote icon */}

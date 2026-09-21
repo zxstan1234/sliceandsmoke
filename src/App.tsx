@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,11 +12,15 @@ import AnimatedBackground from './components/AnimatedBackground';
 import AnimatedGradients from './components/AnimatedGradients';
 import SectionDivider from './components/SectionDivider';
 
+// Memoize background components to prevent re-renders
+const MemoizedAnimatedBackground = memo(AnimatedBackground);
+const MemoizedAnimatedGradients = memo(AnimatedGradients);
+
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500);
+    const timer = setTimeout(() => setLoading(false), 1200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -51,10 +55,10 @@ function App() {
             key="content"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
           >
-            <AnimatedGradients />
-            <AnimatedBackground />
+            <MemoizedAnimatedGradients />
+            <MemoizedAnimatedBackground />
             <Navbar />
             <Hero />
             <SectionDivider variant="wave" />

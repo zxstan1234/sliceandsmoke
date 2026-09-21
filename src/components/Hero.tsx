@@ -14,27 +14,16 @@ export default function Hero() {
         <div className="hero-overlay absolute inset-0" />
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-brand-orange/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-amber/5 rounded-full blur-3xl animate-pulse" />
-      
-      {/* Smoke particles */}
-      <div className="smoke-particle" style={{ left: '20%', bottom: '30%', animationDelay: '0s' }} />
-      <div className="smoke-particle" style={{ left: '60%', bottom: '20%', animationDelay: '2s' }} />
-      <div className="smoke-particle" style={{ left: '80%', bottom: '40%', animationDelay: '4s' }} />
-      <div className="smoke-particle" style={{ left: '40%', bottom: '10%', animationDelay: '6s' }} />
-      
-      {/* Orbiting decoration */}
-      <div className="hero-decoration" style={{ top: '30%', left: '50%' }} />
-      <div className="hero-decoration" style={{ top: '50%', left: '50%', animationDelay: '-5s', animationDuration: '25s' }} />
-      <div className="hero-decoration" style={{ top: '70%', left: '50%', animationDelay: '-10s', animationDuration: '30s' }} />
+      {/* Decorative elements - simplified */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-brand-orange/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-amber/5 rounded-full blur-3xl" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-6"
         >
           <span className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm text-brand-muted backdrop-blur-sm">
@@ -44,36 +33,36 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider text-white mb-4"
         >
           SLICE <span className="gradient-text">&</span> SMOKE
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg sm:text-xl md:text-2xl text-brand-muted font-light mb-4 max-w-2xl mx-auto"
         >
           Multan's Finest Pizza & Burger Experience
         </motion.p>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
           className="text-sm text-brand-muted/70 mb-10"
         >
           Industrial Estate, Sher Shah Road, Multan
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
@@ -92,9 +81,9 @@ export default function Hero() {
 
         {/* Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 grid grid-cols-3 gap-8 max-w-md mx-auto"
         >
           <div className="text-center">
@@ -116,12 +105,12 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 0.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="text-brand-muted/50"
         >
           <ChevronDown size={28} />

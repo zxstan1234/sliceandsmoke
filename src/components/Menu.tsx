@@ -110,15 +110,6 @@ export default function Menu() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Floating food emojis */}
-        <div className="float-emoji" style={{ top: '5%', left: '3%', animationDelay: '1s', fontSize: '1.5rem' }}>🍕</div>
-        <div className="float-emoji" style={{ top: '10%', right: '5%', animationDelay: '3s', fontSize: '1.5rem' }}>🍔</div>
-        <div className="float-emoji" style={{ top: '40%', left: '2%', animationDelay: '5s', fontSize: '1.2rem' }}>🌶️</div>
-        <div className="float-emoji" style={{ top: '60%', right: '3%', animationDelay: '7s', fontSize: '1.2rem' }}>🧀</div>
-        
-        {/* Light sweep effect */}
-        <div className="light-sweep" style={{ animationDelay: '3s' }} />
-        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -191,9 +182,9 @@ export default function Menu() {
             {currentItems.map((item, index) => (
               <motion.div
                 key={item.name}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                transition={{ duration: 0.25, delay: Math.min(index * 0.04, 0.3) }}
                 className="menu-card group flex items-center justify-between p-4 rounded-xl bg-brand-card/50 border border-brand-border/50 hover:border-brand-orange/30"
               >
                 <div className="flex items-center gap-3 flex-1 min-w-0">

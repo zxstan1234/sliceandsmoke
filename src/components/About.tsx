@@ -10,20 +10,11 @@ export default function About() {
       <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-darker to-brand-dark" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Floating food emojis */}
-        <div className="float-emoji" style={{ top: '15%', left: '5%', animationDelay: '0s' }}>🍕</div>
-        <div className="float-emoji" style={{ top: '25%', right: '8%', animationDelay: '2s' }}>🍔</div>
-        <div className="float-emoji" style={{ bottom: '20%', left: '10%', animationDelay: '4s' }}>🔥</div>
-        <div className="float-emoji" style={{ bottom: '30%', right: '5%', animationDelay: '6s' }}>🍟</div>
-        
-        {/* Light sweep effect */}
-        <div className="light-sweep" />
-        
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <span className="text-brand-orange text-sm font-semibold tracking-widest uppercase">Our Story</span>
