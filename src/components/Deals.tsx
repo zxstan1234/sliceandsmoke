@@ -4,9 +4,9 @@ import { Zap } from 'lucide-react';
 import DealIllustration from './DealIllustration';
 
 const deals = [
-  { name: 'Solo Box', description: 'Chicken Patty Burger + Fries + 350ml', price: '449', tag: 'Solo', type: 'burger-fries' as const },
-  { name: 'Hunger Buster Deal', description: '1 Zinger + Fries + 350ml', price: '499', tag: 'Value', type: 'burger-fries' as const },
-  { name: 'Mini Crave Deal', description: 'Small Pizza + 350ml', price: '549', tag: 'Solo', type: 'pizza-drink' as const },
+  { name: 'Solo Box', description: 'Chicken Patty Burger + Fries + Drink', price: '449', tag: 'Solo', type: 'burger-fries' as const },
+  { name: 'Hunger Buster Deal', description: '1 Zinger + Fries + Drink', price: '499', tag: 'Value', type: 'burger-fries' as const },
+  { name: 'Mini Crave Deal', description: 'Small Pizza + Drink', price: '549', tag: 'Solo', type: 'pizza-drink' as const },
   { name: 'Duo Delight Deal', description: 'Medium Pizza + 1L Drink', price: '949', tag: 'Couple', type: 'pizza-drink' as const },
   { name: 'Trio Feast Deal', description: 'Large Pizza + 1L Drink', price: '1399', tag: 'Friends', type: 'pizza-drink' as const },
   { name: 'Xtreme Duo Deal', description: 'Small Pizza + Zinger + Small Pasta + 1L', price: '1300', tag: 'Couple', type: 'combo' as const },

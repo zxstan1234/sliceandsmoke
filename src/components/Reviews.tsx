@@ -68,7 +68,7 @@ export default function Reviews() {
               <Star key={i} size={24} className="text-brand-amber fill-brand-amber" />
             ))}
           </div>
-          <p className="text-brand-muted mt-2">5.0 out of 5 — Based on 20+ Google Reviews</p>
+          <p className="text-brand-muted mt-2">5.0 — Based on 20+ Google Reviews</p>
           <div className="w-20 h-1 bg-gradient-to-r from-brand-orange to-brand-amber mx-auto mt-6 rounded-full" />
         </motion.div>
 
