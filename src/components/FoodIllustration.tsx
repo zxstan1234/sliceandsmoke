@@ -180,26 +180,70 @@ const PastaSVG = () => (
   </svg>
 );
 
-// Cartoonish fried chicken illustration
-const ChickenSVG = ({ variant = 0 }: { variant?: number }) => (
+// Cartoonish chicken LEG piece (drumstick) illustration
+const LegPieceSVG = ({ variant = 0 }: { variant?: number }) => (
   <svg viewBox="0 0 100 100" className="w-full h-full">
-    {/* Piece 1 - drumstick */}
-    <path d="M25,60 Q20,45 30,35 Q40,28 45,40 Q48,55 40,65 Q32,70 25,60Z" fill="#D4893F" stroke="#A0522D" strokeWidth="2" />
-    <rect x="22" y="62" width="5" height="15" rx="2" fill="#F5DEB3" stroke="#D2B48C" strokeWidth="1" />
-    {/* Crispy texture */}
-    <circle cx="32" cy="42" r="2" fill="#E8A44A" opacity="0.7" />
-    <circle cx="38" cy="50" r="2.5" fill="#C68E3C" opacity="0.6" />
-    <circle cx="28" cy="52" r="1.5" fill="#E8A44A" opacity="0.7" />
-    {/* Piece 2 */}
-    <path d="M55,55 Q52,40 60,32 Q72,28 75,42 Q76,55 68,62 Q58,65 55,55Z" fill="#E8A44A" stroke="#A0522D" strokeWidth="2" />
-    <circle cx="62" cy="42" r="2" fill="#D4893F" opacity="0.7" />
-    <circle cx="68" cy="50" r="2.5" fill="#C68E3C" opacity="0.6" />
+    {/* Bone stick */}
+    <rect x="45" y="62" width="10" height="22" rx="4" fill="#F5DEB3" stroke="#D2B48C" strokeWidth="1.5" />
+    {/* Bone knob bottom */}
+    <ellipse cx="50" cy="86" rx="8" ry="5" fill="#F5DEB3" stroke="#D2B48C" strokeWidth="1.5" />
+    {/* Bone knob top (hidden under meat) */}
+    <ellipse cx="50" cy="60" rx="6" ry="4" fill="#F5DEB3" stroke="#D2B48C" strokeWidth="1" />
+    {/* Main drumstick meat - big round top */}
+    <ellipse cx="50" cy="38" rx="28" ry="26" fill={variant > 0 ? "#C68E3C" : "#D4893F"} stroke="#8B4513" strokeWidth="2" />
+    {/* Crispy coating bumps */}
+    <circle cx="35" cy="30" r="5" fill={variant > 0 ? "#B8792E" : "#E8A44A"} opacity="0.8" />
+    <circle cx="55" cy="25" r="6" fill={variant > 0 ? "#A56B23" : "#C68E3C"} opacity="0.7" />
+    <circle cx="65" cy="38" r="5" fill={variant > 0 ? "#B8792E" : "#E8A44A"} opacity="0.8" />
+    <circle cx="42" cy="48" r="5" fill={variant > 0 ? "#A56B23" : "#C68E3C"} opacity="0.7" />
+    <circle cx="58" cy="50" r="4" fill={variant > 0 ? "#B8792E" : "#E8A44A"} opacity="0.6" />
+    <circle cx="30" cy="42" r="4" fill={variant > 0 ? "#A56B23" : "#C68E3C"} opacity="0.6" />
+    {/* Highlight */}
+    <ellipse cx="40" cy="28" rx="6" ry="4" fill="white" opacity="0.15" />
+    {/* Oven bake: grill marks */}
     {variant > 0 && (
       <>
+        <line x1="32" y1="32" x2="68" y2="32" stroke="#5D4037" strokeWidth="1.5" opacity="0.4" />
+        <line x1="30" y1="42" x2="70" y2="42" stroke="#5D4037" strokeWidth="1.5" opacity="0.4" />
+        <line x1="34" y1="52" x2="66" y2="52" stroke="#5D4037" strokeWidth="1.5" opacity="0.3" />
         {/* Steam */}
-        <path d="M40,25 Q42,20 40,15" stroke="#BDC3C7" strokeWidth="1" fill="none" opacity="0.5" />
-        <path d="M50,22 Q52,17 50,12" stroke="#BDC3C7" strokeWidth="1" fill="none" opacity="0.5" />
-        <path d="M60,25 Q62,20 60,15" stroke="#BDC3C7" strokeWidth="1" fill="none" opacity="0.5" />
+        <path d="M38,12 Q40,7 38,2" stroke="#BDC3C7" strokeWidth="1.2" fill="none" opacity="0.5" />
+        <path d="M50,10 Q52,5 50,0" stroke="#BDC3C7" strokeWidth="1.2" fill="none" opacity="0.5" />
+        <path d="M62,12 Q64,7 62,2" stroke="#BDC3C7" strokeWidth="1.2" fill="none" opacity="0.5" />
+      </>
+    )}
+  </svg>
+);
+
+// Cartoonish chicken CHEST piece (breast fillet) illustration
+const ChestPieceSVG = ({ variant = 0 }: { variant?: number }) => (
+  <svg viewBox="0 0 100 100" className="w-full h-full">
+    {/* Main breast piece - flat oval shape */}
+    <ellipse cx="50" cy="50" rx="34" ry="24" fill={variant > 0 ? "#C68E3C" : "#D4893F"} stroke="#8B4513" strokeWidth="2" />
+    {/* Inner meat texture - slightly lighter */}
+    <ellipse cx="50" cy="50" rx="28" ry="18" fill={variant > 0 ? "#D4A054" : "#E8A44A"} opacity="0.5" />
+    {/* Crispy coating bumps */}
+    <circle cx="32" cy="42" r="5" fill={variant > 0 ? "#B8792E" : "#E8A44A"} opacity="0.7" />
+    <circle cx="50" cy="36" r="5" fill={variant > 0 ? "#A56B23" : "#C68E3C"} opacity="0.7" />
+    <circle cx="68" cy="44" r="5" fill={variant > 0 ? "#B8792E" : "#E8A44A"} opacity="0.7" />
+    <circle cx="40" cy="56" r="4" fill={variant > 0 ? "#A56B23" : "#C68E3C"} opacity="0.6" />
+    <circle cx="60" cy="58" r="4" fill={variant > 0 ? "#B8792E" : "#E8A44A"} opacity="0.6" />
+    <circle cx="50" cy="50" r="3" fill={variant > 0 ? "#A56B23" : "#C68E3C"} opacity="0.5" />
+    {/* Highlight */}
+    <ellipse cx="42" cy="42" rx="8" ry="5" fill="white" opacity="0.12" />
+    {/* Crispy edge details */}
+    <path d="M20,48 Q22,45 25,47" stroke="#8B4513" strokeWidth="1" fill="none" opacity="0.5" />
+    <path d="M75,48 Q78,45 80,47" stroke="#8B4513" strokeWidth="1" fill="none" opacity="0.5" />
+    {/* Oven bake: grill marks */}
+    {variant > 0 && (
+      <>
+        <line x1="28" y1="42" x2="72" y2="42" stroke="#5D4037" strokeWidth="1.5" opacity="0.4" />
+        <line x1="25" y1="52" x2="75" y2="52" stroke="#5D4037" strokeWidth="1.5" opacity="0.4" />
+        <line x1="30" y1="60" x2="70" y2="60" stroke="#5D4037" strokeWidth="1.5" opacity="0.3" />
+        {/* Steam */}
+        <path d="M38,22 Q40,17 38,12" stroke="#BDC3C7" strokeWidth="1.2" fill="none" opacity="0.5" />
+        <path d="M50,20 Q52,15 50,10" stroke="#BDC3C7" strokeWidth="1.2" fill="none" opacity="0.5" />
+        <path d="M62,22 Q64,17 62,12" stroke="#BDC3C7" strokeWidth="1.2" fill="none" opacity="0.5" />
       </>
     )}
   </svg>
@@ -243,7 +287,7 @@ export default function FoodIllustration({ category, name, className = '' }: Pro
         return <FriesSVG variant={itemLower.includes('loaded') || itemLower.includes('masala') ? 1 : 0} />;
       case 'appetizers':
         if (itemLower.includes('wing') || itemLower.includes('peri')) return <WingsSVG variant={itemLower.includes('peri') ? 1 : 0} />;
-        if (itemLower.includes('nugget') || itemLower.includes('hot shot')) return <ChickenSVG variant={0} />;
+        if (itemLower.includes('nugget') || itemLower.includes('hot shot')) return <ChestPieceSVG variant={0} />;
         if (itemLower.includes('roll')) return <WrapSVG />;
         return <WingsSVG variant={0} />;
       case 'wraps':
@@ -252,7 +296,8 @@ export default function FoodIllustration({ category, name, className = '' }: Pro
       case 'pasta':
         return <PastaSVG />;
       case 'chicken':
-        return <ChickenSVG variant={itemLower.includes('oven') ? 1 : 0} />;
+        if (itemLower.includes('leg')) return <LegPieceSVG variant={itemLower.includes('oven') ? 1 : 0} />;
+        return <ChestPieceSVG variant={itemLower.includes('oven') ? 1 : 0} />;
       case 'beverages':
         return <DrinkSVG variant={itemLower.includes('water') ? 0 : 1} />;
       default:
