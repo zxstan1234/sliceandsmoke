@@ -24,6 +24,15 @@ export default function Deals() {
       <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-darker to-brand-dark" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Floating emojis */}
+        <div className="float-emoji" style={{ top: '8%', left: '4%', animationDelay: '0s', fontSize: '1.5rem' }}>💰</div>
+        <div className="float-emoji" style={{ top: '12%', right: '6%', animationDelay: '2s', fontSize: '1.5rem' }}>🎉</div>
+        <div className="float-emoji" style={{ bottom: '15%', left: '6%', animationDelay: '4s', fontSize: '1.2rem' }}>⚡</div>
+        <div className="float-emoji" style={{ bottom: '20%', right: '4%', animationDelay: '6s', fontSize: '1.2rem' }}>🔥</div>
+        
+        {/* Light sweep effect */}
+        <div className="light-sweep" style={{ animationDelay: '5s' }} />
+        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

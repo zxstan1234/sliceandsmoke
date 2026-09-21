@@ -15,8 +15,19 @@ export default function Hero() {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-brand-orange/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-amber/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-brand-orange/5 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-amber/5 rounded-full blur-3xl animate-pulse" />
+      
+      {/* Smoke particles */}
+      <div className="smoke-particle" style={{ left: '20%', bottom: '30%', animationDelay: '0s' }} />
+      <div className="smoke-particle" style={{ left: '60%', bottom: '20%', animationDelay: '2s' }} />
+      <div className="smoke-particle" style={{ left: '80%', bottom: '40%', animationDelay: '4s' }} />
+      <div className="smoke-particle" style={{ left: '40%', bottom: '10%', animationDelay: '6s' }} />
+      
+      {/* Orbiting decoration */}
+      <div className="hero-decoration" style={{ top: '30%', left: '50%' }} />
+      <div className="hero-decoration" style={{ top: '50%', left: '50%', animationDelay: '-5s', animationDuration: '25s' }} />
+      <div className="hero-decoration" style={{ top: '70%', left: '50%', animationDelay: '-10s', animationDuration: '30s' }} />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">

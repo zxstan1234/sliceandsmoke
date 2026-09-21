@@ -110,6 +110,15 @@ export default function Menu() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Floating food emojis */}
+        <div className="float-emoji" style={{ top: '5%', left: '3%', animationDelay: '1s', fontSize: '1.5rem' }}>🍕</div>
+        <div className="float-emoji" style={{ top: '10%', right: '5%', animationDelay: '3s', fontSize: '1.5rem' }}>🍔</div>
+        <div className="float-emoji" style={{ top: '40%', left: '2%', animationDelay: '5s', fontSize: '1.2rem' }}>🌶️</div>
+        <div className="float-emoji" style={{ top: '60%', right: '3%', animationDelay: '7s', fontSize: '1.2rem' }}>🧀</div>
+        
+        {/* Light sweep effect */}
+        <div className="light-sweep" style={{ animationDelay: '3s' }} />
+        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

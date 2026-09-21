@@ -8,6 +8,9 @@ import Deals from './components/Deals';
 import Reviews from './components/Reviews';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import AnimatedBackground from './components/AnimatedBackground';
+import AnimatedGradients from './components/AnimatedGradients';
+import SectionDivider from './components/SectionDivider';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -50,12 +53,19 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
+            <AnimatedGradients />
+            <AnimatedBackground />
             <Navbar />
             <Hero />
+            <SectionDivider variant="wave" />
             <About />
+            <SectionDivider variant="flame" />
             <Menu />
+            <SectionDivider variant="dots" />
             <Deals />
+            <SectionDivider variant="wave" />
             <Reviews />
+            <SectionDivider variant="flame" />
             <Contact />
             <Footer />
           </motion.div>
